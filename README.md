@@ -57,10 +57,10 @@ contact details and logs form submissions to the console.
 
 | Variable                      | Purpose                                                 |
 | ----------------------------- | ------------------------------------------------------- |
-| `NEXT_PUBLIC_SITE_URL`        | Canonical origin for metadata, sitemap and JSON-LD      |
-| `NEXT_PUBLIC_WHATSAPP_NUMBER` | Digits only, international format (e.g. `905551234567`) |
-| `NEXT_PUBLIC_CONTACT_EMAIL`   | Shown in the footer and contact page                    |
-| `NEXT_PUBLIC_CONTACT_PHONE`   | Shown in the footer and contact page                    |
+| `NEXT_SITE_URL`        | Canonical origin for metadata, sitemap and JSON-LD      |
+| `NEXT_WHATSAPP_NUMBER` | Digits only, international format (e.g. `905551234567`) |
+| `NEXT_CONTACT_EMAIL`   | Shown in the footer and contact page                    |
+| `NEXT_CONTACT_PHONE`   | Shown in the footer and contact page                    |
 | `RESEND_API_KEY`              | Enables real email delivery of leads                    |
 | `LEAD_INBOX`                  | Where consultation requests are sent                    |
 | `LEAD_FROM`                   | Verified sender identity                                |

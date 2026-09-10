@@ -59,7 +59,7 @@ function renderEmail(lead: LeadPayload): string {
  */
 export async function sendLead(lead: LeadPayload): Promise<void> {
   const apiKey = process.env.RESEND_API_KEY;
-  const to = process.env.LEAD_INBOX || process.env.NEXT_PUBLIC_CONTACT_EMAIL;
+  const to = process.env.LEAD_INBOX || process.env.NEXT_CONTACT_EMAIL;
   const from = process.env.LEAD_FROM || "PROSANA Website <onboarding@resend.dev>";
 
   if (!apiKey || !to) {

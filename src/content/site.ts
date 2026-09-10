@@ -6,7 +6,7 @@
 
 /** The clinic's WhatsApp line, digits only, international format. */
 const rawWhatsApp =
-  process.env.NEXT_PUBLIC_WHATSAPP_NUMBER?.replace(/\D/g, "") || "905421214822";
+  process.env.NEXT_WHATSAPP_NUMBER?.replace(/\D/g, "") || "";
 
 /** Turkish mobile numbers read as +90 5XX XXX XX XX. Other formats pass through. */
 function formatPhone(digits: string): string {
@@ -18,12 +18,12 @@ export const site = {
   name: "PROSANA",
   legalName: "PROSANA Clinic",
   tagline: "Medical + Aesthetic Wellbeing",
-  url: (process.env.NEXT_PUBLIC_SITE_URL || "https://prosanaclinic.com").replace(
+  url: (process.env.NEXT_SITE_URL || "https://prosanaclinic.com").replace(
     /\/$/,
     "",
   ),
-  email: process.env.NEXT_PUBLIC_CONTACT_EMAIL || "info@prosanaclinic.com",
-  phone: process.env.NEXT_PUBLIC_CONTACT_PHONE || formatPhone(rawWhatsApp),
+  email: process.env.NEXT_CONTACT_EMAIL || "prosanaclinc@gmail.com",
+  phone: process.env.NEXT_CONTACT_PHONE || formatPhone(rawWhatsApp),
   whatsapp: {
     number: rawWhatsApp,
     display: formatPhone(rawWhatsApp),
