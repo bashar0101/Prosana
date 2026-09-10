@@ -1,0 +1,14 @@
+{
+  "name": "PROSANA Clinic",
+  "short_name": "PROSANA",
+  "description": "Medical tourism in Istanbul — hair transplantation, dental treatments and aesthetic surgery, organised end to end.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#F6FBFD",
+  "theme_color": "#223B84",
+  "icons": [
+    { "src": "/icons/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/icons/icon-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "/icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}

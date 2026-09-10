@@ -1,0 +1,288 @@
+@import "tailwindcss";
+
+/* ==========================================================================
+   PROSANA — design tokens
+   Source of truth: Prosana_Blue_Visual_Identity.pdf (Blue Visual Identity)
+   Deep Blue #223B84 · Cool White #F6FBFD · Light Blue #66C2EA · Slate #243746
+   ========================================================================== */
+
+@theme {
+  /* --- Brand core (exact values from the identity document) --- */
+  --color-deep: #223b84;
+  --color-cool: #f6fbfd;
+  --color-light: #66c2ea;
+  --color-slate: #243746;
+
+  /* --- Deep Blue scale (foundation / contrast) --- */
+  --color-deep-50: #eef2fb;
+  --color-deep-100: #dbe3f6;
+  --color-deep-200: #b7c6ec;
+  --color-deep-300: #8ea4de;
+  --color-deep-400: #5c78c4;
+  --color-deep-500: #3a55a4;
+  --color-deep-600: #223b84;
+  --color-deep-700: #1b2f6a;
+  --color-deep-800: #152550;
+  --color-deep-900: #101c3d;
+  --color-deep-950: #0a1229;
+
+  /* --- Light Blue scale (signature / care) --- */
+  --color-light-50: #f0faff;
+  --color-light-100: #e0f4fd;
+  --color-light-200: #bde8f9;
+  --color-light-300: #93d8f2;
+  --color-light-400: #66c2ea;
+  --color-light-500: #3da8d8;
+  --color-light-600: #2689b8;
+  --color-light-700: #1e6d94;
+  --color-light-800: #1c5a79;
+  --color-light-900: #1c4b65;
+
+  /* --- Slate scale (type / contrast) --- */
+  --color-slate-50: #f4f6f8;
+  --color-slate-100: #e6ebef;
+  --color-slate-200: #cdd6de;
+  --color-slate-300: #a7b6c3;
+  --color-slate-400: #7a8fa1;
+  --color-slate-500: #5b7185;
+  --color-slate-600: #47596b;
+  --color-slate-700: #3a4857;
+  --color-slate-800: #2d3946;
+  --color-slate-900: #243746;
+  --color-slate-950: #16212b;
+
+  /* --- Warm neutrals (photography direction: warm stone) --- */
+  --color-stone-50: #faf7f3;
+  --color-stone-100: #f3ece2;
+  --color-stone-200: #e7dccd;
+  --color-stone-300: #d8c9b4;
+  --color-stone-400: #c2ae94;
+
+  /* --- Semantic --- */
+  --color-surface: #ffffff;
+  --color-canvas: #f6fbfd;
+  --color-ink: #243746;
+  --color-ink-muted: #5b7185;
+  --color-hairline: #e2eaf0;
+
+  /* --- Typography --- */
+  --font-sans:
+    var(--font-noto-sans), var(--font-noto-arabic), ui-sans-serif, system-ui,
+    -apple-system, "Segoe UI", sans-serif;
+  --font-serif: var(--font-noto-serif), var(--font-noto-arabic), ui-serif, Georgia, serif;
+
+  --text-display: clamp(2.375rem, 1.5rem + 3.5vw, 4.25rem);
+  --text-display--line-height: 1.06;
+  --text-display--letter-spacing: -0.022em;
+
+  --text-h1: clamp(2.125rem, 1.35rem + 3.1vw, 3.5rem);
+  --text-h1--line-height: 1.1;
+  --text-h1--letter-spacing: -0.02em;
+
+  --text-h2: clamp(1.75rem, 1.2rem + 2.1vw, 2.75rem);
+  --text-h2--line-height: 1.14;
+  --text-h2--letter-spacing: -0.018em;
+
+  --text-h3: clamp(1.3rem, 1.08rem + 0.85vw, 1.75rem);
+  --text-h3--line-height: 1.24;
+  --text-h3--letter-spacing: -0.012em;
+
+  --text-lead: clamp(1.0625rem, 0.98rem + 0.4vw, 1.25rem);
+  --text-lead--line-height: 1.65;
+
+  --text-eyebrow: 0.75rem;
+  --text-eyebrow--line-height: 1.2;
+  --text-eyebrow--letter-spacing: 0.16em;
+
+  /* --- Radii / shadow / motion --- */
+  --radius-card: 1.25rem;
+  --radius-pill: 999px;
+
+  --shadow-soft: 0 1px 2px rgb(16 28 61 / 0.04), 0 8px 24px rgb(16 28 61 / 0.06);
+  --shadow-lift: 0 2px 4px rgb(16 28 61 / 0.05), 0 18px 44px rgb(16 28 61 / 0.1);
+  --shadow-deep: 0 24px 70px rgb(16 28 61 / 0.18);
+
+  --ease-brand: cubic-bezier(0.22, 0.61, 0.36, 1);
+
+  --animate-rise: rise 0.7s var(--ease-brand) both;
+  --animate-fade: fade 0.6s var(--ease-brand) both;
+  --animate-wa-pulse: wa-pulse 2.6s var(--ease-brand) infinite;
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Attention ring for the floating WhatsApp action. box-shadow only — a
+   transform here would widen the scrollable area on phones. */
+@keyframes wa-pulse {
+  0% {
+    box-shadow:
+      0 10px 30px rgb(16 28 61 / 0.28),
+      0 0 0 0 rgb(37 211 102 / 0.5);
+  }
+  70% {
+    box-shadow:
+      0 10px 30px rgb(16 28 61 / 0.28),
+      0 0 0 14px rgb(37 211 102 / 0);
+  }
+  100% {
+    box-shadow:
+      0 10px 30px rgb(16 28 61 / 0.28),
+      0 0 0 0 rgb(37 211 102 / 0);
+  }
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* ==========================================================================
+   Base
+   ========================================================================== */
+
+@layer base {
+  *,
+  ::after,
+  ::before {
+    border-color: var(--color-hairline);
+  }
+
+  html {
+    -webkit-text-size-adjust: 100%;
+    scroll-behavior: smooth;
+    scroll-padding-top: 6rem;
+  }
+
+  body {
+    background-color: var(--color-canvas);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    font-synthesis-weight: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-serif);
+    color: var(--color-deep-700);
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-light-500);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+
+  ::selection {
+    background: var(--color-light-200);
+    color: var(--color-deep-800);
+  }
+
+  /* Arabic renders a touch small at the same size; lift it and relax leading. */
+  [lang="ar"] body,
+  [dir="rtl"] body {
+    font-size: 1.02em;
+    line-height: 1.8;
+  }
+
+  [dir="rtl"] h1,
+  [dir="rtl"] h2,
+  [dir="rtl"] h3 {
+    letter-spacing: 0;
+    line-height: 1.28;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    ::before,
+    ::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+/* ==========================================================================
+   Components
+   ========================================================================== */
+
+@utility eyebrow {
+  font-size: var(--text-eyebrow);
+  line-height: var(--text-eyebrow--line-height);
+  letter-spacing: var(--text-eyebrow--letter-spacing);
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+/* Mirrors the identity's letterspaced Noto Sans logotype. */
+@utility wordmark {
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  font-weight: 400;
+}
+
+@utility hairline-y {
+  background-image: linear-gradient(
+    to bottom,
+    transparent,
+    var(--color-light-300),
+    transparent
+  );
+}
+
+@utility surface-card {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-hairline);
+  border-radius: var(--radius-card);
+}
+
+/* ==========================================================================
+   RTL typography
+   Unlayered on purpose: these must win over the layered `text-*` utilities,
+   whose tight Latin leading clips Arabic ascenders and diacritics.
+   ========================================================================== */
+
+[dir="rtl"] .text-display,
+[dir="rtl"] .text-h1,
+[dir="rtl"] .text-h2,
+[dir="rtl"] .text-h3 {
+  line-height: 1.35;
+  letter-spacing: 0;
+}
+
+[dir="rtl"] .text-lead {
+  line-height: 1.85;
+}
+
+[dir="rtl"] .eyebrow {
+  letter-spacing: 0.06em;
+}
+
+[dir="rtl"] .wordmark {
+  letter-spacing: 0.06em;
+}

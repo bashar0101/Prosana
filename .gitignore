@@ -1,0 +1,29 @@
+# dependencies
+node_modules/
+
+# build output
+.next/
+out/
+build/
+tsconfig.tsbuildinfo
+
+# env — secrets never go in git
+.env
+.env*.local
+
+# vercel
+.vercel/
+
+# editors / OS
+.vscode/
+.idea/
+.DS_Store
+*.pem
+*.log
+
+# local agent tooling (contains machine-specific absolute paths)
+.claude/
+.mcp.json
+.code-review-graph/
+
+graphify-out 
