@@ -401,8 +401,9 @@ Requirements:
 
 The website must support:
 
-- Arabic
 - English
+- Arabic
+- Franch
 - Turkish
 
 Requirements:
@@ -414,7 +415,9 @@ Example:
 
 /en
 /ar
+/fr
 /tr
+
 
 ---
 

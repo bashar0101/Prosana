@@ -1,11 +1,24 @@
 import { site } from "@/content/site";
-import type { Locale } from "@/i18n/config";
+import { locales, localeHrefLang, type Locale } from "@/i18n/config";
 import { href, type RouteKey } from "@/lib/routes";
 
 type Json = Record<string, unknown>;
 
 const ORG_ID = `${site.url}/#organization`;
 const WEBSITE_ID = `${site.url}/#website`;
+
+/**
+ * Derived from the locale config rather than hand-listed, so adding a language
+ * to the site cannot leave the structured data silently under-reporting it.
+ */
+function availableLanguages(): Json[] {
+  const display = new Intl.DisplayNames(["en"], { type: "language" });
+  return locales.map((locale) => ({
+    "@type": "Language",
+    name: display.of(localeHrefLang[locale]) ?? locale,
+    alternateName: localeHrefLang[locale],
+  }));
+}
 
 /**
  * MedicalBusiness with a full postal address, geo point and opening hours —
@@ -51,11 +64,7 @@ export function medicalBusinessSchema(locale: Locale, description: string): Json
       { "@type": "Country", name: "France" },
       { "@type": "Country", name: "Türkiye" },
     ],
-    availableLanguage: [
-      { "@type": "Language", name: "Arabic", alternateName: "ar" },
-      { "@type": "Language", name: "English", alternateName: "en" },
-      { "@type": "Language", name: "Turkish", alternateName: "tr" },
-    ],
+    availableLanguage: availableLanguages(),
     medicalSpecialty: ["PlasticSurgery", "Dentistry", "Dermatology"],
     openingHoursSpecification: [
       {
