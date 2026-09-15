@@ -77,11 +77,6 @@ export const fr: Dictionary = {
       titleAccent: "orchestré par des experts.",
       text: "De votre premier message à votre retour en toute sécurité, PROSANA planifie chaque étape — clinique, médecin, voyage, hôtel et suivi.",
       note: "Sans engagement. Vos données médicales restent confidentielles.",
-      stats: [
-        { value: "12 000+", label: "Patients accompagnés" },
-        { value: "38", label: "Pays desservis" },
-        { value: "4,9/5", label: "Note moyenne des patients" },
-      ],
     },
     trust: {
       title: "La confiance de patients venus de 38 pays",

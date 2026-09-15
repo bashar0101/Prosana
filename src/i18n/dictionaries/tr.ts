@@ -77,11 +77,6 @@ export const tr: Dictionary = {
       titleAccent: "uzmanlar tarafından yönetilir.",
       text: "İlk mesajınızdan güvenli dönüşünüze kadar PROSANA her adımı planlar — klinik, doktor, seyahat, otel ve takip.",
       note: "Hiçbir yükümlülük yok. Tıbbi bilgileriniz gizli kalır.",
-      stats: [
-        { value: "12.000+", label: "Ağırlanan hasta" },
-        { value: "38", label: "Hizmet verilen ülke" },
-        { value: "4,9/5", label: "Ortalama hasta puanı" },
-      ],
     },
     trust: {
       title: "38 ülkeden hastanın güvendiği ekip",

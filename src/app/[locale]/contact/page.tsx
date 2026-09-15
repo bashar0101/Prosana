@@ -133,7 +133,7 @@ export default async function ContactPage({ params }: PageProps) {
               <div className="rounded-card border-hairline mt-10 overflow-hidden border">
                 <iframe
                   title={page.details.directions}
-                  src={`https://www.google.com/maps?q=${mapsQuery}&hl=${locale}&output=embed`}
+                  src={`https://www.google.com/maps?q=${mapsQuery}&z=17&hl=${locale}&output=embed`}
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
                   className="h-64 w-full border-0"

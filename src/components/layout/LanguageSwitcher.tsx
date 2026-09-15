@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 
+import { FlagIcon } from "@/components/ui/Flags";
 import { locales, localeNames, localeShortNames, type Locale } from "@/i18n/config";
 import { switchLocalePath } from "@/lib/routes";
 import { cn } from "@/lib/utils";
@@ -64,7 +65,7 @@ export function LanguageSwitcher({
         aria-haspopup="menu"
         aria-label={`${label} — ${localeNames[locale]}`}
         className={cn(
-          "inline-flex h-10 min-w-11 items-center justify-center rounded-xl border px-3 text-[0.8rem] font-semibold tracking-[0.08em] uppercase transition-colors",
+          "inline-flex h-10 items-center justify-center gap-2 rounded-xl border px-2.5 text-[0.8rem] font-semibold tracking-[0.08em] uppercase transition-colors",
           tone === "light"
             ? open
               ? "border-white/60 bg-white/10 text-white"
@@ -74,6 +75,7 @@ export function LanguageSwitcher({
               : "border-hairline hover:border-deep-300 hover:text-deep-700 text-slate-600",
         )}
       >
+        <FlagIcon locale={locale} />
         {localeShortNames[locale]}
       </button>
 
@@ -95,7 +97,7 @@ export function LanguageSwitcher({
                 lang={option}
                 aria-current={active ? "true" : undefined}
                 className={cn(
-                  "flex min-h-12 items-center justify-center text-center text-[0.95rem] transition-colors",
+                  "flex min-h-12 items-center justify-center gap-2.5 text-center text-[0.95rem] transition-colors",
                   active
                     ? "bg-deep-50 text-deep-700 font-semibold"
                     : "hover:bg-canvas text-slate-600",
@@ -103,6 +105,7 @@ export function LanguageSwitcher({
               >
                 {/* <bdi> isolates each name's own direction so العربية shapes
                     right-to-left without dragging the row's alignment with it. */}
+                <FlagIcon locale={option} />
                 <bdi>{localeNames[option]}</bdi>
               </Link>
             );

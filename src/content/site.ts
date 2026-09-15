@@ -5,8 +5,7 @@
  */
 
 /** The clinic's WhatsApp line, digits only, international format. */
-const rawWhatsApp =
-  process.env.NEXT_WHATSAPP_NUMBER?.replace(/\D/g, "") || "";
+const rawWhatsApp = process.env.NEXT_WHATSAPP_NUMBER?.replace(/\D/g, "") || "";
 
 /** Turkish mobile numbers read as +90 5XX XXX XX XX. Other formats pass through. */
 function formatPhone(digits: string): string {
@@ -18,10 +17,7 @@ export const site = {
   name: "PROSANA",
   legalName: "PROSANA Clinic",
   tagline: "Medical + Aesthetic Wellbeing",
-  url: (process.env.NEXT_SITE_URL || "https://prosanaclinic.com").replace(
-    /\/$/,
-    "",
-  ),
+  url: (process.env.NEXT_SITE_URL || "https://prosanaclinic.com").replace(/\/$/, ""),
   email: process.env.NEXT_CONTACT_EMAIL || "prosanaclinc@gmail.com",
   phone: process.env.NEXT_CONTACT_PHONE || formatPhone(rawWhatsApp),
   whatsapp: {
@@ -29,17 +25,20 @@ export const site = {
     display: formatPhone(rawWhatsApp),
   },
   address: {
-    street: "Nispetiye Cd. No. 1",
-    district: "Beşiktaş",
+    street: "Kazlıçeşme, Kennedy Cad. 52M",
+    district: "Zeytinburnu",
     city: "Istanbul",
     region: "İstanbul",
-    postalCode: "34340",
+    postalCode: "34020",
     country: "TR",
     countryName: "Türkiye",
   },
+  // Approximate coordinates for Kazlıçeşme, Zeytinburnu. Only the JSON-LD geo
+  // point uses these; the map embed and "open in Maps" link both search the
+  // address string above. Replace with the exact pin from Google Maps.
   geo: {
-    latitude: 41.0766,
-    longitude: 29.0234,
+    latitude: 40.9830567,
+    longitude: 28.9050964,
   },
   hours: {
     opens: "09:00",
@@ -58,11 +57,18 @@ export const site = {
   },
 } as const;
 
-export const mapsQuery = encodeURIComponent(
-  `${site.legalName}, ${site.address.street}, ${site.address.district}, ${site.address.city}`,
-);
+/**
+ * The clinic's own Google Maps place listing, not a text search — a search
+ * resolves to whatever Google thinks matches and can land on a neighbouring
+ * pin. Copied verbatim from the place URL with only the ephemeral `entry` and
+ * `g_ep` session parameters stripped; the `!1s0x…:0x…` feature id is what makes
+ * this resolve to exactly one place.
+ */
+export const mapsUrl =
+  "https://www.google.com/maps/place/Kazl%C4%B1%C3%A7e%C5%9Fme,+Kennedy+Cad.+52M,+34020+Zeytinburnu%2F%C4%B0stanbul/@40.9830765,28.9025543,17z/data=!3m1!4b1!4m6!3m5!1s0x14cabb78be1108b1:0xcc0514e19f37f91d!8m2!3d40.9830725!4d28.9051292!16s%2Fg%2F11l5l3k4nz";
 
-export const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${mapsQuery}`;
+/** Embed source for the contact-page map, pinned to the exact coordinates. */
+export const mapsQuery = `${site.geo.latitude},${site.geo.longitude}`;
 
 /** wa.me deep link with a pre-filled, locale-aware first message. */
 export function whatsappHref(message?: string): string {

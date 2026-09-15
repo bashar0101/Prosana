@@ -37,8 +37,16 @@ export function MobileNav({ locale, labels, ui, whatsappHref }: MobileNavProps) 
   useEffect(() => {
     if (!open) return;
 
-    const previous = document.body.style.overflow;
+    // Locking the body also removes the viewport scrollbar, which widens the
+    // page and jolts every centred element sideways as the drawer opens.
+    // Reserve the scrollbar's width as padding so nothing moves.
+    const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
+    const previousOverflow = document.body.style.overflow;
+    const previousPadding = document.body.style.paddingInlineEnd;
     document.body.style.overflow = "hidden";
+    if (scrollbarWidth > 0) {
+      document.body.style.paddingInlineEnd = `${scrollbarWidth}px`;
+    }
 
     const onKeyDown = (event: KeyboardEvent) => {
       if (event.key === "Escape") {
@@ -52,7 +60,8 @@ export function MobileNav({ locale, labels, ui, whatsappHref }: MobileNavProps) 
     panelRef.current?.focus();
 
     return () => {
-      document.body.style.overflow = previous;
+      document.body.style.overflow = previousOverflow;
+      document.body.style.paddingInlineEnd = previousPadding;
       document.removeEventListener("keydown", onKeyDown);
     };
   }, [open]);

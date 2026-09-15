@@ -75,11 +75,6 @@ export const en = {
       titleAccent: "managed by experts.",
       text: "From your first message to your safe return home, PROSANA plans every step — clinic, doctor, travel, hotel and follow-up.",
       note: "No obligation. Your medical details stay confidential.",
-      stats: [
-        { value: "12,000+", label: "Patients cared for" },
-        { value: "38", label: "Countries served" },
-        { value: "4.9/5", label: "Average patient rating" },
-      ],
     },
     trust: {
       title: "Trusted by patients from 38 countries",

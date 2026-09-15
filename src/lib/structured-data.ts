@@ -1,4 +1,4 @@
-import { site } from "@/content/site";
+import { mapsUrl, site } from "@/content/site";
 import { locales, localeHrefLang, type Locale } from "@/i18n/config";
 import { href, type RouteKey } from "@/lib/routes";
 
@@ -82,7 +82,7 @@ export function medicalBusinessSchema(locale: Locale, description: string): Json
       worstRating: 1,
     },
     sameAs: Object.values(site.social),
-    hasMap: `https://www.google.com/maps/search/?api=1&query=${site.geo.latitude},${site.geo.longitude}`,
+    hasMap: mapsUrl,
   };
 }
 

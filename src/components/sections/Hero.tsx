@@ -72,23 +72,6 @@ export function Hero({ locale, dict, whatsappHref }: HeroProps) {
               {hero.note}
             </p>
           </div>
-
-          <dl className="rounded-card mt-16 grid max-w-2xl grid-cols-1 gap-px overflow-hidden border border-white/15 bg-white/10 sm:mt-20 sm:grid-cols-3">
-            {hero.stats.map((stat) => (
-              <div
-                key={stat.label}
-                className="bg-deep-800/40 px-6 py-6 backdrop-blur-sm sm:px-7 sm:py-7"
-              >
-                <dt className="sr-only">{stat.label}</dt>
-                <dd>
-                  <span className="block font-serif text-3xl text-white sm:text-4xl">
-                    {stat.value}
-                  </span>
-                  <span className="mt-1.5 block text-sm text-white/60">{stat.label}</span>
-                </dd>
-              </div>
-            ))}
-          </dl>
         </div>
       </Container>
     </section>
