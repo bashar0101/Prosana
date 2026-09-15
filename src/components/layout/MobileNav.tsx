@@ -56,8 +56,21 @@ export function MobileNav({ locale, labels, ui, whatsappHref }: MobileNavProps) 
     };
     document.addEventListener("keydown", onKeyDown);
 
-    // Move focus into the panel so the drawer reads as a dialog.
-    panelRef.current?.focus();
+    // preventScroll is load-bearing. focus() runs while the panel is still
+    // translated fully off-screen, so without it the browser scrolls the
+    // overlay sideways by the panel's own width to "reveal" it. That scroll
+    // then fights the slide transition, which is what made the drawer shoot
+    // past its resting place and judder before settling.
+    panelRef.current?.focus({ preventScroll: true });
+
+    // Safari has historically ignored preventScroll, so pin the overlay back to
+    // its origin as well. Cheap, and it is the exact displacement that produced
+    // the judder.
+    const overlay = panelRef.current?.parentElement;
+    if (overlay) {
+      overlay.scrollLeft = 0;
+      overlay.scrollTop = 0;
+    }
 
     return () => {
       document.body.style.overflow = previousOverflow;
@@ -90,7 +103,11 @@ export function MobileNav({ locale, labels, ui, whatsappHref }: MobileNavProps) 
       <div
         onClick={() => setOpen(false)}
         className={cn(
-          "bg-deep-950/50 absolute inset-0 backdrop-blur-[2px] transition-opacity duration-300",
+          // No backdrop-blur here: blurring a full-screen scrim is one of the more
+          // expensive things you can ask a phone GPU to do every frame, and it runs
+          // concurrently with the panel's slide. The 50% scrim alone separates the
+          // layers just as well.
+          "bg-deep-950/50 absolute inset-0 transition-opacity duration-300",
           open ? "opacity-100" : "opacity-0",
         )}
       />
@@ -102,7 +119,7 @@ export function MobileNav({ locale, labels, ui, whatsappHref }: MobileNavProps) 
         aria-label={ui.menu}
         tabIndex={-1}
         className={cn(
-          "shadow-deep ease-brand absolute inset-y-0 end-0 flex w-[86%] max-w-sm flex-col bg-white transition-transform duration-300 outline-none",
+          "shadow-deep ease-brand absolute inset-y-0 end-0 flex w-[86%] max-w-sm transform-gpu flex-col bg-white transition-transform duration-300 will-change-transform outline-none",
           open ? "translate-x-0" : "translate-x-full rtl:-translate-x-full",
         )}
       >
