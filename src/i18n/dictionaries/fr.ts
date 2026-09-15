@@ -140,6 +140,13 @@ export const fr: Dictionary = {
         },
       ],
     },
+    clinic: {
+      eyebrow: "À l'intérieur de la clinique",
+      title: "Découvrez où vous serez soigné.",
+      text: "Une courte visite de la clinique à Istanbul — la réception, les salles de soins et l'équipe qui vous accompagnera.",
+      play: "Lancer la vidéo",
+      pause: "Mettre en pause",
+    },
     journey: {
       eyebrow: "Comment ça se passe",
       title: "Sept étapes, entièrement organisées.",

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 
+import { ClinicVideo } from "@/components/sections/ClinicVideo";
 import { ConsultationCTA } from "@/components/sections/ConsultationCTA";
 import { FeatureGrid } from "@/components/sections/FeatureGrid";
 import { GalleryPreview } from "@/components/sections/GalleryPreview";
@@ -63,6 +64,8 @@ export default async function HomePage({ params }: PageProps) {
         items={home.why.items}
         tone="surface"
       />
+
+      <ClinicVideo locale={locale} dict={dict} />
 
       <JourneyTimeline
         dict={dict}

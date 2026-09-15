@@ -1,5 +1,6 @@
 import Image from "next/image";
 
+import { BeforeAfterSlider } from "@/components/media/BeforeAfterSlider";
 import type { GalleryCase } from "@/content/gallery";
 import { interpolate } from "@/lib/utils";
 
@@ -16,6 +17,14 @@ type BeforeAfterCardProps = {
 };
 
 export function BeforeAfterCard({ item, labels, priority }: BeforeAfterCardProps) {
+  // Dental results arrive as one stacked photograph split into halves, so the
+  // two frames line up exactly — which is what makes a wipe readable. The other
+  // categories are separate shots at different angles, where a side-by-side
+  // pair compares more honestly than a slider.
+  if (item.category === "dental") {
+    return <BeforeAfterSlider item={item} labels={labels} priority={priority} />;
+  }
+
   const caption =
     item.monthsAfter === 1
       ? labels.oneMonthAfter

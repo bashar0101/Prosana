@@ -21,7 +21,7 @@ export function Hero({ locale, dict, whatsappHref }: HeroProps) {
   return (
     <section className="bg-deep-700 relative isolate overflow-hidden text-white">
       <Image
-        src="/images/hero/hero-prosana.jpg"
+        src="/images/hero/hero-clinic.png"
         alt=""
         fill
         priority

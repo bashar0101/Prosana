@@ -65,6 +65,6 @@ export function middleware(request: NextRequest) {
 export const config = {
   // Everything except Next internals, the API surface and static assets.
   matcher: [
-    "/((?!_next/static|_next/image|api/|favicon.ico|robots.txt|sitemap.xml|manifest.webmanifest|brand/|images/|icons/|.*\\.(?:svg|png|jpg|jpeg|gif|webp|avif|ico|txt|xml|webmanifest)$).*)",
+    "/((?!_next/static|_next/image|api/|favicon.ico|robots.txt|sitemap.xml|manifest.webmanifest|brand/|images/|icons/|video/|.*\\.(?:svg|png|jpg|jpeg|gif|webp|avif|ico|mp4|webm|txt|xml|webmanifest)$).*)",
   ],
 };

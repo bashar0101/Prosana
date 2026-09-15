@@ -140,6 +140,13 @@ export const tr: Dictionary = {
         },
       ],
     },
+    clinic: {
+      eyebrow: "Klinikten",
+      title: "Tedavi olacağınız yeri görün.",
+      text: "İstanbul'daki klinikte kısa bir tur — resepsiyon, tedavi odaları ve size bakacak ekip.",
+      play: "Videoyu oynat",
+      pause: "Videoyu duraklat",
+    },
     journey: {
       eyebrow: "Nasıl işliyor",
       title: "Yedi adım, eksiksiz organize.",

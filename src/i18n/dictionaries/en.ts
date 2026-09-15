@@ -138,6 +138,13 @@ export const en = {
         },
       ],
     },
+    clinic: {
+      eyebrow: "Inside the clinic",
+      title: "See where you will be treated.",
+      text: "A short walk through the clinic in Istanbul — reception, treatment rooms and the team who will look after you.",
+      play: "Play video",
+      pause: "Pause video",
+    },
     journey: {
       eyebrow: "How it works",
       title: "Seven steps, fully organised.",

@@ -22,8 +22,11 @@ const build = (category: GalleryCategory, months: number[]): GalleryCase[] =>
   });
 
 export const galleryCases: GalleryCase[] = [
-  ...build("hair", [12, 9, 14]),
-  ...build("dental", [1, 2, 1]),
+  // Four documented cases, each split from a single side-by-side photograph.
+  ...build("hair", [12, 12, 10, 14]),
+  // Ten documented veneer/crown cases, each split from a single stacked
+  // before/after photograph supplied by the clinic.
+  ...build("dental", [1, 1, 2, 1, 1, 2, 1, 1, 2, 1]),
   ...build("aesthetic", [6, 4, 8]),
 ];
 
