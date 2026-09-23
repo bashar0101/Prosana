@@ -59,6 +59,8 @@ export default async function BeforeAfterPage({ params }: PageProps) {
               monthsAfter: dict.common.monthsAfter,
               oneMonthAfter: dict.common.oneMonthAfter,
               disclaimer: dict.common.resultsDisclaimer,
+              previous: dict.common.previous,
+              next: dict.common.next,
             }}
           />
         </Container>

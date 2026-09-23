@@ -27,7 +27,8 @@ export const galleryCases: GalleryCase[] = [
   // Ten documented veneer/crown cases, each split from a single stacked
   // before/after photograph supplied by the clinic.
   ...build("dental", [1, 1, 2, 1, 1, 2, 1, 1, 2, 1]),
-  ...build("aesthetic", [6, 4, 8]),
+  // Five aesthetic cases, each split from a single side-by-side photograph.
+  ...build("aesthetic", [1, 6, 6, 4, 6]),
 ];
 
 export const galleryCategories: GalleryCategory[] = ["hair", "dental", "aesthetic"];

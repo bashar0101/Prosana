@@ -49,6 +49,8 @@ export const fr: Dictionary = {
     breadcrumb: "Fil d'Ariane",
     footerNav: "Navigation du pied de page",
     mainNav: "Navigation principale",
+    previous: "Précédent",
+    next: "Suivant",
   },
 
   nav: {

@@ -49,6 +49,8 @@ export const tr: Dictionary = {
     breadcrumb: "Gezinme yolu",
     footerNav: "Alt bilgi menüsü",
     mainNav: "Ana menü",
+    previous: "Önceki",
+    next: "Sonraki",
   },
 
   nav: {

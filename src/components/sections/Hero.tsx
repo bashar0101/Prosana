@@ -26,11 +26,11 @@ export function Hero({ locale, dict, whatsappHref }: HeroProps) {
         fill
         priority
         sizes="100vw"
-        className="object-cover object-center opacity-95"
+        className="object-cover object-center"
       />
       <div
         aria-hidden
-        className="from-deep-900/85 via-deep-800/70 to-deep-900/90 sm:from-deep-900/95 sm:via-deep-800/75 sm:to-deep-900/35 absolute inset-0 bg-gradient-to-b sm:bg-gradient-to-r sm:rtl:bg-gradient-to-l"
+        className="from-deep-900/70 via-deep-800/58 to-deep-900/75 sm:from-deep-900/82 sm:via-deep-800/58 sm:to-deep-900/24 absolute inset-0 bg-gradient-to-b sm:bg-gradient-to-r sm:rtl:bg-gradient-to-l"
       />
       <ArcDecor className="text-light-300 -end-40 top-1/2 h-[46rem] w-[46rem] -translate-y-1/2" />
 
@@ -44,7 +44,7 @@ export function Hero({ locale, dict, whatsappHref }: HeroProps) {
               <span className="text-light-300 block">{hero.titleAccent}</span>
             </h1>
 
-            <p className="text-lead mt-7 max-w-2xl text-white/80">{hero.text}</p>
+            <p className="text-lead mt-7 max-w-2xl text-white/85">{hero.text}</p>
 
             <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-4">
               <Button
@@ -67,7 +67,7 @@ export function Hero({ locale, dict, whatsappHref }: HeroProps) {
               </Button>
             </div>
 
-            <p className="mt-6 flex items-center gap-2 text-sm text-white/55">
+            <p className="mt-6 flex items-center gap-2 text-sm text-white/75">
               <CheckIcon className="text-light-400 size-4" />
               {hero.note}
             </p>

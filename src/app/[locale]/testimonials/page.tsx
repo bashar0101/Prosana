@@ -5,6 +5,7 @@ import { ConsultationCTA } from "@/components/sections/ConsultationCTA";
 import { PageHero } from "@/components/sections/PageHero";
 import { TestimonialCard } from "@/components/sections/TestimonialsSection";
 import { JsonLd } from "@/components/seo/JsonLd";
+import { CardRail } from "@/components/ui/CardRail";
 import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Rating } from "@/components/ui/Rating";
@@ -79,13 +80,17 @@ export default async function TestimonialsPage({ params }: PageProps) {
             {page.hero.title}
           </h2>
 
-          <ul className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          <CardRail
+            labelledBy="reviews-heading"
+            controls={{ previous: dict.common.previous, next: dict.common.next }}
+            className="mt-12"
+          >
             {testimonials.map((item) => (
               <li key={item.id}>
                 <TestimonialCard dict={dict} id={item.id} />
               </li>
             ))}
-          </ul>
+          </CardRail>
         </Container>
       </Section>
 
@@ -98,7 +103,11 @@ export default async function TestimonialsPage({ params }: PageProps) {
             text={page.video.text}
           />
 
-          <ul className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <CardRail
+            labelledBy="video-heading"
+            controls={{ previous: dict.common.previous, next: dict.common.next }}
+            className="mt-12"
+          >
             {["social-introduction", "social-meaning", "social-invitation"].map(
               (name) => (
                 <li
@@ -122,7 +131,7 @@ export default async function TestimonialsPage({ params }: PageProps) {
                 </li>
               ),
             )}
-          </ul>
+          </CardRail>
         </Container>
       </Section>
 

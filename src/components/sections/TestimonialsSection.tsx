@@ -1,6 +1,7 @@
 import Image from "next/image";
 
 import { Button } from "@/components/ui/Button";
+import { CardRail } from "@/components/ui/CardRail";
 import { Container } from "@/components/ui/Container";
 import { Rating } from "@/components/ui/Rating";
 import { Section } from "@/components/ui/Section";
@@ -109,13 +110,17 @@ export function TestimonialsSection({
           ) : null}
         </div>
 
-        <ul className="mt-14 grid gap-6 lg:grid-cols-3">
+        <CardRail
+          labelledBy={`${id}-heading`}
+          controls={{ previous: dict.common.previous, next: dict.common.next }}
+          className="mt-14"
+        >
           {ids.map((testimonialId) => (
             <li key={testimonialId}>
               <TestimonialCard dict={dict} id={testimonialId} />
             </li>
           ))}
-        </ul>
+        </CardRail>
       </Container>
     </Section>
   );

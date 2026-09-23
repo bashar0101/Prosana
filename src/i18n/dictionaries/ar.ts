@@ -48,6 +48,8 @@ export const ar: Dictionary = {
     breadcrumb: "مسار التصفح",
     footerNav: "روابط التذييل",
     mainNav: "القائمة الرئيسية",
+    previous: "السابق",
+    next: "التالي",
   },
 
   nav: {

@@ -3,6 +3,7 @@
 import { useState } from "react";
 
 import { BeforeAfterCard } from "@/components/media/BeforeAfterCard";
+import { CardRail } from "@/components/ui/CardRail";
 import { galleryCases, type GalleryCategory } from "@/content/gallery";
 import { cn } from "@/lib/utils";
 
@@ -15,6 +16,8 @@ type BeforeAfterGalleryProps = {
     monthsAfter: string;
     oneMonthAfter: string;
     disclaimer: string;
+    previous: string;
+    next: string;
   };
   filters: {
     label: string;
@@ -69,7 +72,11 @@ export function BeforeAfterGallery({ labels, filters, empty }: BeforeAfterGaller
       {visible.length === 0 ? (
         <p className="text-ink-muted mt-12">{empty}</p>
       ) : (
-        <ul className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <CardRail
+          label={filters[active]}
+          controls={{ previous: labels.previous, next: labels.next }}
+          className="mt-10"
+        >
           {visible.map((item, index) => (
             <li key={item.id}>
               <BeforeAfterCard
@@ -85,7 +92,7 @@ export function BeforeAfterGallery({ labels, filters, empty }: BeforeAfterGaller
               />
             </li>
           ))}
-        </ul>
+        </CardRail>
       )}
 
       <p className="mt-10 max-w-2xl text-xs leading-relaxed text-slate-500">

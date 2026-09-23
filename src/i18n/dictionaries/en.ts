@@ -47,6 +47,8 @@ export const en = {
     breadcrumb: "Breadcrumb",
     footerNav: "Footer navigation",
     mainNav: "Main navigation",
+    previous: "Previous",
+    next: "Next",
   },
 
   nav: {

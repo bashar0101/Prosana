@@ -1,5 +1,6 @@
 import { BeforeAfterCard } from "@/components/media/BeforeAfterCard";
 import { Button } from "@/components/ui/Button";
+import { CardRail } from "@/components/ui/CardRail";
 import { Container } from "@/components/ui/Container";
 import { Section } from "@/components/ui/Section";
 import { SectionHeading } from "@/components/ui/SectionHeading";
@@ -60,7 +61,11 @@ export function GalleryPreview({
           ) : null}
         </div>
 
-        <ul className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <CardRail
+          labelledBy={`${id}-heading`}
+          controls={{ previous: dict.common.previous, next: dict.common.next }}
+          className="mt-14"
+        >
           {items.map((item) => (
             <li key={item.id}>
               <BeforeAfterCard
@@ -75,7 +80,7 @@ export function GalleryPreview({
               />
             </li>
           ))}
-        </ul>
+        </CardRail>
 
         <p className="mt-8 max-w-2xl text-xs leading-relaxed text-slate-500">
           {dict.common.resultsDisclaimer}
