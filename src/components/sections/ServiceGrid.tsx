@@ -40,15 +40,17 @@ export function ServiceGrid({ locale, dict }: ServiceGridProps) {
             return (
               <li key={service.id}>
                 <article className="group surface-card ease-brand hover:shadow-lift flex h-full flex-col overflow-hidden transition-shadow duration-300">
-                  <div className="relative aspect-[4/3] overflow-hidden">
-                    <Image
-                      src={service.image}
-                      alt=""
-                      fill
-                      sizes="(min-width: 1024px) 30vw, (min-width: 640px) 50vw, 82vw"
-                      className="ease-brand object-cover transition-transform duration-700 group-hover:scale-[1.04]"
-                    />
-                  </div>
+                  {service.cardImage ? (
+                    <div className="relative aspect-[4/3] overflow-hidden">
+                      <Image
+                        src={service.cardImage}
+                        alt=""
+                        fill
+                        sizes="(min-width: 1024px) 30vw, (min-width: 640px) 50vw, 82vw"
+                        className="ease-brand object-cover transition-transform duration-700 group-hover:scale-[1.04]"
+                      />
+                    </div>
+                  ) : null}
 
                   <div className="flex flex-1 flex-col p-7">
                     <h3 className="text-h3">{copy.title}</h3>
@@ -69,7 +71,7 @@ export function ServiceGrid({ locale, dict }: ServiceGridProps) {
 
                     <Link
                       href={href(locale, service.route)}
-                      className="text-deep-600 hover:text-deep-700 mt-6 inline-flex min-h-11 items-center gap-2 self-start py-2 text-sm font-medium underline-offset-4 transition-colors hover:underline"
+                      className="text-deep-600 hover:text-deep-700 mt-auto inline-flex min-h-11 items-center gap-2 self-start py-2 pt-6 text-sm font-medium underline-offset-4 transition-colors hover:underline"
                     >
                       {dict.common.learnMore}
                       <ArrowIcon className="size-4 transition-transform group-hover:translate-x-0.5 rtl:-scale-x-100 rtl:group-hover:-translate-x-0.5" />

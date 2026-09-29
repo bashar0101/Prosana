@@ -80,6 +80,13 @@ export const tr: Dictionary = {
       text: "İlk mesajınızdan güvenli dönüşünüze kadar PROSANA her adımı planlar — klinik, doktor, seyahat, otel ve takip.",
       note: "Hiçbir yükümlülük yok. Tıbbi bilgileriniz gizli kalır.",
     },
+    hairPoster: {
+      eyebrow: "Saç restorasyonu",
+      title: "İşlemden önce bir plan.",
+      text: "Her saç vakası saç derisi değerlendirmesi, donör alan analizi ve yazılı bir tedavi planıyla başlar — herhangi bir tarih belirlenmeden önce sizinle birlikte kararlaştırılır.",
+      cta: "Saç ekimini inceleyin",
+      alt: "PROSANA saç restorasyonu: bir hekim hastanın saç çizgisini inceliyor. Net bir plan saç derisi değerlendirmesi, donör alan analizi ve kişisel tedavi planıyla başlar.",
+    },
     trust: {
       title: "38 ülkeden hastanın güvendiği ekip",
       items: [

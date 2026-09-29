@@ -78,6 +78,13 @@ export const en = {
       text: "From your first message to your safe return home, PROSANA plans every step — clinic, doctor, travel, hotel and follow-up.",
       note: "No obligation. Your medical details stay confidential.",
     },
+    hairPoster: {
+      eyebrow: "Hair restoration",
+      title: "A plan before a procedure.",
+      text: "Every hair case begins with a scalp assessment, a donor area analysis and a written treatment plan — agreed with you before any date is booked.",
+      cta: "See hair transplant",
+      alt: "PROSANA hair restoration: a clinician examining a patient's hairline. A clear plan starts with a scalp assessment, donor area analysis and a personal treatment plan.",
+    },
     trust: {
       title: "Trusted by patients from 38 countries",
       items: [

@@ -18,7 +18,7 @@ export const site = {
   legalName: "PROSANA Clinic",
   tagline: "Medical + Aesthetic Wellbeing",
   url: (process.env.NEXT_SITE_URL || "https://prosanaclinic.com").replace(/\/$/, ""),
-  email: process.env.NEXT_CONTACT_EMAIL || "prosanaclinc@gmail.com",
+  email: process.env.NEXT_CONTACT_EMAIL || "prosanaclinic@gmail.com",
   phone: process.env.NEXT_CONTACT_PHONE || formatPhone(rawWhatsApp),
   whatsapp: {
     number: rawWhatsApp,

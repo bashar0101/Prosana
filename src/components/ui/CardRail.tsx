@@ -67,7 +67,11 @@ export function CardRail({
           // scroll-px matches the padding: without it mandatory snapping pulls
           // the first card flush against the screen edge.
           "-mx-5 flex snap-x snap-mandatory scroll-px-5 gap-4 overflow-x-auto px-5 pb-4",
-          "[&>li]:w-[82%] [&>li]:shrink-0 [&>li]:snap-start",
+          // Each card must be a containing block. An absolutely positioned
+          // descendant (an sr-only label, a badge) otherwise resolves against
+          // the section, escapes this scroll container and stretches the whole
+          // document sideways — the off-screen cards drag the page with them.
+          "[&>li]:relative [&>li]:w-[82%] [&>li]:shrink-0 [&>li]:snap-start",
           "focus-visible:outline-deep-600 focus-visible:outline-2 focus-visible:outline-offset-4",
           "sm:mx-0 sm:grid sm:gap-6 sm:overflow-visible sm:px-0 sm:pb-0 sm:[&>li]:w-auto",
           columnClasses[columns],

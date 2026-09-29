@@ -7,6 +7,7 @@ import { FeatureGrid } from "@/components/sections/FeatureGrid";
 import { GalleryPreview } from "@/components/sections/GalleryPreview";
 import { Hero } from "@/components/sections/Hero";
 import { JourneyTimeline } from "@/components/sections/JourneyTimeline";
+import { PosterFeature } from "@/components/sections/PosterFeature";
 import { ServiceGrid } from "@/components/sections/ServiceGrid";
 import { TestimonialsSection } from "@/components/sections/TestimonialsSection";
 import { TrustBar } from "@/components/sections/TrustBar";
@@ -17,6 +18,7 @@ import { featuredTestimonials } from "@/content/testimonials";
 import { isLocale } from "@/i18n/config";
 import { getDictionary } from "@/i18n/get-dictionary";
 import { buildMetadata } from "@/lib/metadata";
+import { href } from "@/lib/routes";
 import { howToSchema } from "@/lib/structured-data";
 
 type PageProps = { params: Promise<{ locale: string }> };
@@ -55,6 +57,19 @@ export default async function HomePage({ params }: PageProps) {
       <TrustBar title={home.trust.title} items={home.trust.items} />
 
       <ServiceGrid locale={locale} dict={dict} />
+
+      <PosterFeature
+        id="hair-restoration"
+        src="/images/hair/restoration-poster.jpg"
+        alt={home.hairPoster.alt}
+        width={1080}
+        height={1350}
+        eyebrow={home.hairPoster.eyebrow}
+        title={home.hairPoster.title}
+        text={home.hairPoster.text}
+        cta={{ label: home.hairPoster.cta, href: href(locale, "hairTransplant") }}
+        tone="stone"
+      />
 
       <FeatureGrid
         id="why"

@@ -80,6 +80,13 @@ export const fr: Dictionary = {
       text: "De votre premier message à votre retour en toute sécurité, PROSANA planifie chaque étape — clinique, médecin, voyage, hôtel et suivi.",
       note: "Sans engagement. Vos données médicales restent confidentielles.",
     },
+    hairPoster: {
+      eyebrow: "Restauration capillaire",
+      title: "Un plan avant l'intervention.",
+      text: "Chaque cas capillaire commence par une évaluation du cuir chevelu, une analyse de la zone donneuse et un plan de traitement écrit — convenu avec vous avant toute date d'opération.",
+      cta: "Voir la greffe de cheveux",
+      alt: "Restauration capillaire PROSANA : un médecin examine la ligne frontale du patient. Un plan clair commence par une évaluation du cuir chevelu, une analyse de la zone donneuse et un plan de traitement personnalisé.",
+    },
     trust: {
       title: "La confiance de patients venus de 38 pays",
       items: [
