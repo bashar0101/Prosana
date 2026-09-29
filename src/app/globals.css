@@ -286,3 +286,94 @@
 [dir="rtl"] .wordmark {
   letter-spacing: 0.06em;
 }
+
+/* --------------------------------------------------------------------------
+   Arabic runs optically smaller than Latin at the same font-size: the script
+   has no capitals, so its body sits lower in the em box. These rules scale the
+   type only — every size is derived from the Latin token rather than restated,
+   so the two stay in step when the scale is tuned. Spacing is deliberately
+   untouched: scaling the root font size instead would zoom the whole layout
+   and squeeze the phone breakpoints.
+   -------------------------------------------------------------------------- */
+
+[dir="rtl"] {
+  --rtl-type-scale: 1.12;
+  --rtl-heading-scale: 1.06;
+}
+
+[dir="rtl"] .text-display {
+  font-size: calc(var(--text-display) * var(--rtl-heading-scale));
+}
+
+[dir="rtl"] .text-h1 {
+  font-size: calc(var(--text-h1) * var(--rtl-heading-scale));
+}
+
+[dir="rtl"] .text-h2 {
+  font-size: calc(var(--text-h2) * var(--rtl-heading-scale));
+}
+
+[dir="rtl"] .text-h3 {
+  font-size: calc(var(--text-h3) * var(--rtl-type-scale));
+}
+
+[dir="rtl"] .text-lead {
+  font-size: calc(var(--text-lead) * var(--rtl-type-scale));
+}
+
+[dir="rtl"] .text-eyebrow,
+[dir="rtl"] .eyebrow {
+  font-size: calc(var(--text-eyebrow) * var(--rtl-type-scale));
+}
+
+[dir="rtl"] .text-xs {
+  font-size: calc(var(--text-xs) * var(--rtl-type-scale));
+}
+[dir="rtl"] .text-sm {
+  font-size: calc(var(--text-sm) * var(--rtl-type-scale));
+}
+[dir="rtl"] .text-base {
+  font-size: calc(var(--text-base) * var(--rtl-type-scale));
+}
+[dir="rtl"] .text-lg {
+  font-size: calc(var(--text-lg) * var(--rtl-type-scale));
+}
+[dir="rtl"] .text-xl {
+  font-size: calc(var(--text-xl) * var(--rtl-type-scale));
+}
+[dir="rtl"] .text-2xl {
+  font-size: calc(var(--text-2xl) * var(--rtl-type-scale));
+}
+[dir="rtl"] .text-4xl {
+  font-size: calc(var(--text-4xl) * var(--rtl-heading-scale));
+}
+[dir="rtl"] .text-5xl {
+  font-size: calc(var(--text-5xl) * var(--rtl-heading-scale));
+}
+
+/* One-off sizes set inline in components. Listed explicitly because an
+   arbitrary value has no token to derive from. */
+[dir="rtl"] .text-\[0\.65rem\] {
+  font-size: calc(0.65rem * var(--rtl-type-scale));
+}
+[dir="rtl"] .text-\[0\.68rem\] {
+  font-size: calc(0.68rem * var(--rtl-type-scale));
+}
+[dir="rtl"] .text-\[0\.8rem\] {
+  font-size: calc(0.8rem * var(--rtl-type-scale));
+}
+[dir="rtl"] .text-\[0\.875rem\] {
+  font-size: calc(0.875rem * var(--rtl-type-scale));
+}
+[dir="rtl"] .text-\[0\.95rem\] {
+  font-size: calc(0.95rem * var(--rtl-type-scale));
+}
+[dir="rtl"] .text-\[0\.98rem\] {
+  font-size: calc(0.98rem * var(--rtl-type-scale));
+}
+[dir="rtl"] .text-\[1\.02rem\] {
+  font-size: calc(1.02rem * var(--rtl-type-scale));
+}
+[dir="rtl"] .text-\[1\.08rem\] {
+  font-size: calc(1.08rem * var(--rtl-type-scale));
+}
